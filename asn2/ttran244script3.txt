@@ -1,5 +1,6 @@
+use ttran244tadb;
 select Last_Name from Professor;
-select t.First_Name, t.Last_Name from TA as t, Professor as p where ta.Head_Supervisor_Id = p.Prof_User_Is and p.First_Name = "Mike";
+select t.First_Name, t.Last_Name from TA as t, Professor as p where t.Head_Supervisor_Id = p.Prof_User_Is and p.First_Name = "Mike";
 select First_Name, Last_Name, Degree from TA where Degree = "PhD" group by First_Name;
 select * from Course where Course_Num like "CS2%";
 select t.First_Name, c.Course_Num from TA as t, Assigned_Course as c where t.TA_User_Id = c.TA_User_Id and c.Term = "Fall";
