@@ -1,4 +1,5 @@
-load data infile 'fall2014data.txt' into table Professor;
+use ttran244tadb;
+load data infile '/tmp/fall2014data.txt' into table Professor fields terminated by ',';
 insert into Professor values("Tommy", "Tran", "ttran244");
 select * from Professor;
 insert into TA values("Homer", "Simpson", "250011111", "hsimpson", "Masters", "lreid2");
