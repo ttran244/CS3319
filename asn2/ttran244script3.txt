@@ -8,7 +8,7 @@ select t.First_Name as TA_First_Name, p.First_Name as Prof_FirstName, p.Last_Nam
 select p.First_Name, p.Last_Name from Professor as p where p.Prof_User_Id not in (select Head_Supervisor_Id from TA);
 select p.First_Name, p.Last_Name from Professor as p where p.Prof_User_Id not in (select Head_Supervisor_Id from TA) and p.Prof_User_Id not in (select Cosupervisor_Id from Cosupervisor);
 select Degree, count(*) as Num_TA from TA where Degree = "PhD";
-select Course_Num, Course_Name, First_Name, Last_Name from Course inner join Assigned_Course on Course.Course_Num = Assigned_Course.Course_Num left outer join TA on Assign_Course.TA_User_Id = TA.TA_User_Id where Course_Num like "CS1%";
+select c.Course_Num, c.Course_Name, t.First_Name, t.Last_Name from Assigned_Course as a inner join Course on a.Course_Num = c.Course_Num left outer join TA as t on a.TA_User_Id = t.TA_User_Id where c.Course_Num like "CS1%";
 select Year, count(*) as Num_TAs from Assigned_Course group by Year;
 select Year from Assigned_Course group by Year having count(Year) < 5;
 select t.First_Name, t.Last_Name from TA as t inner join Professor as p on t.Head_Supervisor_Id = p.Prof_User_Id inner join Cosupervisor on Cosupervisor.Cosupervisor_Id = t.Head_Supervisor_Id where p.First_Name = "Doug" and p.Last_Name = "Vancise";
