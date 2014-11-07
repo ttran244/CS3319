@@ -1,0 +1,317 @@
+--------------
+load data infile '/tmp/fall2014data.txt' into table Professor fields terminated by ','
+--------------
+
+--------------
+insert into Professor values("Tommy", "Tran", "ttran244")
+--------------
+
+--------------
+select * from Professor
+--------------
+
+First_Name	Last_Name	Prof_User_Id
+Bob	Mercer	bmercer
+Charles	Ling	cling
+Doug	Vancise	dvancise
+Hanan	Lutfiyya	hlutfiyy
+John	Barron	jbarron
+Laura	Reid	lreid2
+Mike	Bauer	mbauer
+Mark	Daley	mdaley
+Mike	Katchabaw	mkatchab
+Marc	Moreno Maza	mmm
+Mark	Perry	mperry
+Nazim	Madhavji	nmadhav
+Sylvia	Osborn	sosborn
+Tommy	Tran	ttran244
+--------------
+insert into TA values("Homer", "Simpson", "250011111", "hsimpson", "Masters", "lreid2", "")
+--------------
+
+--------------
+insert into TA values("Marge", "Simpson", "250011112", "msimpson", "Masters", "mmm", "")
+--------------
+
+--------------
+insert into TA values("Lisa", "Simpson", "250011113", "lsimpson", "PhD", "lreid2", "")
+--------------
+
+--------------
+insert into TA values("Maggie", "Simpson", "250011114", "msimpso1", "PhD", "lreid2", "")
+--------------
+
+--------------
+insert into TA values("Ned", "Flanders", "250000666", "nflander", "PhD", "mkatchab", "")
+--------------
+
+--------------
+insert into TA values("Todd", "Flanders", "250000667", "tflander", "Masters", "mbauer", "")
+--------------
+
+--------------
+insert into TA values("Monty", "Burns", "250000001", "mburns", "PhD", "dvancise", "")
+--------------
+
+--------------
+insert into TA values("Waylan", "Smithers", "250022222", "wsmither", "PhD", "mbauer", "")
+--------------
+
+--------------
+insert into TA values("Peter", "Griffin", "250011220", "pgriffin", "Masters", "bmercer", "")
+--------------
+
+--------------
+select * from TA
+--------------
+
+First_Name	Last_Name	StudentNum	TA_User_Id	Degree	Head_Supervisor_Id	Image
+Homer	Simpson	250011111	hsimpson	Masters	lreid2	
+Lisa	Simpson	250011113	lsimpson	PhD	lreid2	
+Monty	Burns	250000001	mburns	PhD	dvancise	
+Maggie	Simpson	250011114	msimpso1	PhD	lreid2	
+Marge	Simpson	250011112	msimpson	Masters	mmm	
+Ned	Flanders	250000666	nflander	PhD	mkatchab	
+Peter	Griffin	250011220	pgriffin	Masters	bmercer	
+Todd	Flanders	250000667	tflander	Masters	mbauer	
+Waylan	Smithers	250022222	wsmither	PhD	mbauer	
+--------------
+insert into Course values("CS1026", "Intro to Programming")
+--------------
+
+--------------
+insert into Course values("CS1033", "Multimedia and Communications")
+--------------
+
+--------------
+insert into Course values("CS1032", "Info Systems and Design")
+--------------
+
+--------------
+insert into Course values("CS2212", "Intro to Software Engineering")
+--------------
+
+--------------
+insert into Course values("CS3319", "Intro to Databases")
+--------------
+
+--------------
+insert into Course values("CS4411", "Advanced Databases")
+--------------
+
+--------------
+insert into Course values("CS2210", "Data Structures")
+--------------
+
+--------------
+insert into Course values("CS2208", "Computer Organization")
+--------------
+
+--------------
+insert into Course values("CS2209", "Logic")
+--------------
+
+--------------
+insert into Course values("CS2211", "Software Tool")
+--------------
+
+--------------
+insert into Course values("CS3357", "Networks")
+--------------
+
+--------------
+select * from Course
+--------------
+
+Course_Num	Course_Name
+CS1026	Intro to Programming
+CS1032	Info Systems and Design
+CS1033	Multimedia and Communications
+CS2208	Computer Organization
+CS2209	Logic
+CS2210	Data Structures
+CS2211	Software Tool
+CS2212	Intro to Software Engineering
+CS3319	Intro to Databases
+CS3357	Networks
+CS4411	Advanced Databases
+--------------
+insert into Cosupervisor values("mdaley", "hsimpson")
+--------------
+
+--------------
+insert into Cosupervisor values("mbauer", "hsimpson")
+--------------
+
+--------------
+insert into Cosupervisor values("mdaley", "mburns")
+--------------
+
+--------------
+insert into Cosupervisor values("dvancise", "mburns")
+--------------
+
+--------------
+insert into Cosupervisor values("mbauer", "msimpso1")
+--------------
+
+--------------
+insert into Cosupervisor values("sosborn", "msimpso1")
+--------------
+
+--------------
+insert into Cosupervisor values("mperry", "msimpso1")
+--------------
+
+--------------
+insert into Cosupervisor values("lreid2", "lsimpson")
+--------------
+
+--------------
+insert into Assigned_Course values("hsimpson", "CS1033", "Fall", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("tflander", "CS1033", "Fall", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("msimpson", "CS1033", "Fall", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("hsimpson", "CS3357", "Spring", 2013, "")
+--------------
+
+--------------
+insert into Assigned_Course values("tflander", "CS3357", "Spring", 2013, "")
+--------------
+
+--------------
+insert into Assigned_Course values("wsmither", "CS3357", "Spring", 2013, "")
+--------------
+
+--------------
+insert into Assigned_Course values("mburns", "CS3357", "Spring", 2013, "")
+--------------
+
+--------------
+insert into Assigned_Course values("lsimpson", "CS1033", "Fall", 2013, "")
+--------------
+
+--------------
+insert into Assigned_Course values("nflander", "CS1033", "Fall", 2013, "")
+--------------
+
+--------------
+insert into Assigned_Course values("mburns", "CS3319", "Fall", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("lsimpson", "CS1026", "Fall", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("msimpso1", "CS1026", "Fall", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("mburns", "CS1026", "Summer", 2014, "")
+--------------
+
+--------------
+insert into Assigned_Course values("msimpson", "CS1026", "Summer", 2014, "")
+--------------
+
+--------------
+select * from TA
+--------------
+
+First_Name	Last_Name	StudentNum	TA_User_Id	Degree	Head_Supervisor_Id	Image
+Homer	Simpson	250011111	hsimpson	Masters	lreid2	
+Lisa	Simpson	250011113	lsimpson	PhD	lreid2	
+Monty	Burns	250000001	mburns	PhD	dvancise	
+Maggie	Simpson	250011114	msimpso1	PhD	lreid2	
+Marge	Simpson	250011112	msimpson	Masters	mmm	
+Ned	Flanders	250000666	nflander	PhD	mkatchab	
+Peter	Griffin	250011220	pgriffin	Masters	bmercer	
+Todd	Flanders	250000667	tflander	Masters	mbauer	
+Waylan	Smithers	250022222	wsmither	PhD	mbauer	
+--------------
+update TA set First_Name = "Rod" where First_Name = "Todd"
+--------------
+
+--------------
+select * from TA
+--------------
+
+First_Name	Last_Name	StudentNum	TA_User_Id	Degree	Head_Supervisor_Id	Image
+Homer	Simpson	250011111	hsimpson	Masters	lreid2	
+Lisa	Simpson	250011113	lsimpson	PhD	lreid2	
+Monty	Burns	250000001	mburns	PhD	dvancise	
+Maggie	Simpson	250011114	msimpso1	PhD	lreid2	
+Marge	Simpson	250011112	msimpson	Masters	mmm	
+Ned	Flanders	250000666	nflander	PhD	mkatchab	
+Peter	Griffin	250011220	pgriffin	Masters	bmercer	
+Rod	Flanders	250000667	tflander	Masters	mbauer	
+Waylan	Smithers	250022222	wsmither	PhD	mbauer	
+--------------
+update TA set Head_Supervisor_Id = "mperry" where First_Name = "Waylan"
+--------------
+
+--------------
+select * from TA
+--------------
+
+First_Name	Last_Name	StudentNum	TA_User_Id	Degree	Head_Supervisor_Id	Image
+Homer	Simpson	250011111	hsimpson	Masters	lreid2	
+Lisa	Simpson	250011113	lsimpson	PhD	lreid2	
+Monty	Burns	250000001	mburns	PhD	dvancise	
+Maggie	Simpson	250011114	msimpso1	PhD	lreid2	
+Marge	Simpson	250011112	msimpson	Masters	mmm	
+Ned	Flanders	250000666	nflander	PhD	mkatchab	
+Peter	Griffin	250011220	pgriffin	Masters	bmercer	
+Rod	Flanders	250000667	tflander	Masters	mbauer	
+Waylan	Smithers	250022222	wsmither	PhD	mperry	
+--------------
+select * from Assigned_Course
+--------------
+
+TA_User_Id	Course_Num	Term	Year	Num_Students
+hsimpson	CS1033	Fall	2014	0
+hsimpson	CS3357	Spring	2013	0
+lsimpson	CS1026	Fall	2014	0
+lsimpson	CS1033	Fall	2013	0
+mburns	CS1026	Summer	2014	0
+mburns	CS3319	Fall	2014	0
+mburns	CS3357	Spring	2013	0
+msimpso1	CS1026	Fall	2014	0
+msimpson	CS1026	Summer	2014	0
+msimpson	CS1033	Fall	2014	0
+nflander	CS1033	Fall	2013	0
+tflander	CS1033	Fall	2014	0
+tflander	CS3357	Spring	2013	0
+wsmither	CS3357	Spring	2013	0
+--------------
+update Assigned_Course set Term = "Fall", Year = 2012 where Course_Num = "CS1026" and Term = "Fall" and Year = 2014
+--------------
+
+--------------
+select * from Assigned_Course
+--------------
+
+TA_User_Id	Course_Num	Term	Year	Num_Students
+hsimpson	CS1033	Fall	2014	0
+hsimpson	CS3357	Spring	2013	0
+lsimpson	CS1026	Fall	2012	0
+lsimpson	CS1033	Fall	2013	0
+mburns	CS1026	Summer	2014	0
+mburns	CS3319	Fall	2014	0
+mburns	CS3357	Spring	2013	0
+msimpso1	CS1026	Fall	2012	0
+msimpson	CS1026	Summer	2014	0
+msimpson	CS1033	Fall	2014	0
+nflander	CS1033	Fall	2013	0
+tflander	CS1033	Fall	2014	0
+tflander	CS3357	Spring	2013	0
+wsmither	CS3357	Spring	2013	0
