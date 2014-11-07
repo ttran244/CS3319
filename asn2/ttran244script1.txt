@@ -17,7 +17,7 @@ Head_Supervisor_Id varchar(8),
 Image varchar(200), 
 unique(TA_User_Id, StudentNum), 
 primary key(TA_User_Id), 
-foreign key(Head_Supervisor_Id) references Professor(Porf_User_Id) on delete restrict);
+foreign key(Head_Supervisor_Id) references Professor(Prof_User_Id) on delete restrict);
 create table Course(Course_Num varchar(6) not null, 
 Course_Name varchar(30), 
 unqiue(Course_Num), 
