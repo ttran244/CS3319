@@ -45,10 +45,12 @@ insert into Assigned_Course("lsimpson", "CS1026", "Fall", 2014);
 insert into Assigned_Course("msimpso1", "CS1026", "Fall", 2014);
 insert into Assigned_Course("mburns", "CS1026", "Summer", 2014);
 insert into Assigned_Course("msimpson", "CS1026", "Summer", 2014);
+select * from TA;
 update TA set First_Name = "Rod" where First_Name = "Todd";
 select * from TA;
 update TA set Head_Supervisor_Id = "mperry" where First_Name = "Waylan";
 select * from TA;
+select * from Assigned_Course;
 update Assigned_Course set Term = "Fall", Year = 2012 where Course_Num = "CS1026" andTerm = "Fall" and Year = 2014;
 select * from Assigned_Course;
 

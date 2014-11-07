@@ -1,0 +1,2 @@
+select Last_Name from Professor;
+select t.First_Name, t.Last_Name from TA as t, Professor as p where t.Head
