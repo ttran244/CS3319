@@ -52,6 +52,6 @@ select * from TA;
 update TA set Head_Supervisor_Id = "mperry" where First_Name = "Waylan";
 select * from TA;
 select * from Assigned_Course;
-update Assigned_Course set Term = "Fall", Year = 2012 where Course_Num = "CS1026" andTerm = "Fall" and Year = 2014;
+update Assigned_Course set Term = "Fall", Year = 2012 where Course_Num = "CS1026" and Term = "Fall" and Year = 2014;
 select * from Assigned_Course;
 
