@@ -20,7 +20,7 @@ primary key(TA_User_Id),
 foreign key(Head_Supervisor_Id) references Professor(Prof_User_Id) on delete restrict);
 create table Course(Course_Num varchar(6) not null, 
 Course_Name varchar(30), 
-unqiue(Course_Num), 
+unique(Course_Num), 
 primary key(Course_Num));
 create table Cosupervisor(Cosupervisor_Id varchar(8), 
 TA_User_Id varchar(8), 
