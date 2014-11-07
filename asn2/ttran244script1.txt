@@ -28,7 +28,7 @@ foreign key(Cosupervisor_Id) references Professor(Prof_User_Id),
 foreign key(TA_User_Id) references TA(TA_User_Id));
 create table Assigned_Course(TA_User_Id varchar(8), 
 Course_Num varchar(6),
-Term varcahr(6),
+Term varchar(6),
 Year int,
 Num_Students int, 
 foreign key(TA_User_Id) references TA(TA_User_Id), 
