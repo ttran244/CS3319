@@ -23,4 +23,23 @@ insert into Assigned_Course values("hsimpson", "CS1026", "Fall", 1980, 5);
 select * from Assigned_Course;
 insert into Assigned_Course values("hsimpson", "CS1026", "Fall", 2045, 5);
 select * from Assigned_Course;
+delimiter //
+create trigger upd_year before update on Assigned_Course for each row
+begin
+if new.Year < 2000 then
+set new.Year = 2000;
+elseif new.Year > 2029 then
+set new.Year = 2029;
+end if;
+end;//
+delimiter;
+update Assigned_Course set Year = 2015 where Course_Num = "CS1026" and TA_User_Id = "hsimpson" and Year = 2020;
+select * from Assigned_Course;
+update Assigned_Course set Year = 1970 where Course_Num = "CS1026" and TA_User_Id = "hsimpson" and Year = 2015;
+select * from Assigned_Course;
+update Assigned_Course set Year = 2055 where Course_Num = "CS1026" and TA_User_Id = "hsimpson" and Year = 2000;
+select * from Assigned_Course;
+
+
+
 
