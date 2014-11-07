@@ -1,9 +1,11 @@
+use ttran244tadb;
 create view vTaAssignedCourse as select First_Name, Last_Name, Course_Num, Term, Year from TA, Assigned_Course where TA.TA_User_Id = Assigned_Course.TA_User_Id;
 select * from vTaAssignedCourse;
 select * from Professor;
 delete from Professor where First_Name = "Hanan";
 select * from Professor;
 update TA set Head_Supervisor_Id = NULL where Head_Supervisor_Id = "dvancise";
+update Cosupervisor set Cosupervisor_Id = NULL where Cosupervisor_Id = "dvancise";
 delete from Professor where First_Name = "Doug" and Last_Name = "Vancise";
 select * from Professor;
 delimiter //
