@@ -1,11 +1,11 @@
 use ttran244tadb;
 select Last_Name from Professor;
-select t.First_Name, t.Last_Name from TA as t, Professor as p where t.Head_Supervisor_Id = p.Prof_User_Is and p.First_Name = "Mike";
+select t.First_Name, t.Last_Name from TA as t, Professor as p where t.Head_Supervisor_Id = p.Prof_User_Id and p.First_Name = "Mike";
 select First_Name, Last_Name, Degree from TA where Degree = "PhD" group by First_Name;
 select * from Course where Course_Num like "CS2%";
 select t.First_Name, c.Course_Num from TA as t, Assigned_Course as c where t.TA_User_Id = c.TA_User_Id and c.Term = "Fall";
 select t.First_Name as TA_First_Name, p.First_Name as Prof_FirstName, p.Last_Name as Prof_Last_Name from TA as t, Professor as p where t.Head_Supervisor_Id = p.Prof_User_Id;
-select p.First_Name, p.Last_Name from Professor as p, TA where p.Prof_User_Id != TA.Head_Supervisor_Id;
+select p.First_Name, p.Last_Name from Professor as p where p.Prof_User_Id not in (select Head_Supervisor_Id from TA);
 select p.First_Name, p.Last_Name from Professor as p, TA, Cosupervisor where p.Prof_User_Id != TA.Head_Supervisor_Id and p.Prof_User_Id != Cosupervisor.Cosupervisor_Id;
 select Degree, count(*) as Num_TA from TA where Degree = "PhD";
 select Course_Num, Course_Name, First_Name, Last_Name from Course inner join Assigned_Course on Course.Course_Num = Assigned_Course.Course_Num left outer join TA on Assign_Course.TA_User_Id = TA.TA_User_Id where Course_Num like "CS1%";
