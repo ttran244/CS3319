@@ -1,0 +1,136 @@
+--------------
+select Last_Name from Professor
+--------------
+
+Last_Name
+Mercer
+Ling
+Vancise
+Lutfiyya
+Barron
+Reid
+Bauer
+Daley
+Katchabaw
+Moreno Maza
+Perry
+Madhavji
+Osborn
+Tran
+--------------
+select t.First_Name, t.Last_Name from TA as t, Professor as p where t.Head_Supervisor_Id = p.Prof_User_Id and p.First_Name = "Mike"
+--------------
+
+First_Name	Last_Name
+Ned		Flanders
+Rod		Flanders
+--------------
+select First_Name, Last_Name, Degree from TA where Degree = "PhD" group by First_Name
+--------------
+
+First_Name	Last_Name	Degree
+Lisa		Simpson		PhD
+Maggie		Simpson		PhD
+Monty		Burns		PhD
+Ned		Flanders	PhD
+Waylan		Smithers	PhD
+--------------
+select * from Course where Course_Num like "CS2%"
+--------------
+
+Course_Num	Course_Name
+CS2208		Computer Organization
+CS2209		Logic
+CS2210		Data Structures
+CS2211		Software Tool
+CS2212		Intro to Software Engineering
+--------------
+select t.First_Name, c.Course_Num from TA as t, Assigned_Course as c where t.TA_User_Id = c.TA_User_Id and c.Term = "Fall"
+--------------
+
+First_Name	Course_Num
+Homer		CS1033
+Lisa		CS1026
+Lisa		CS1033
+Monty		CS3319
+Maggie		CS1026
+Marge		CS1033
+Ned		CS1033
+Rod		CS1033
+--------------
+select t.First_Name as TA_First_Name, p.First_Name as Prof_FirstName, p.Last_Name as Prof_Last_Name from TA as t, Professor as p where t.Head_Supervisor_Id = p.Prof_User_Id
+--------------
+
+TA_First_Name	Prof_FirstName	Prof_Last_Name
+Homer		Laura		Reid
+Lisa		Laura		Reid
+Monty		Doug		Vancise
+Maggie		Laura		Reid
+Marge		Marc		Moreno Maza
+Ned		Mike		Katchabaw
+Peter		Bob		Mercer
+Rod		Mike		Bauer
+Waylan		Mark		Perry
+--------------
+select p.First_Name, p.Last_Name from Professor as p where p.Prof_User_Id not in (select Head_Supervisor_Id from TA)
+--------------
+
+First_Name	Last_Name
+Charles		Ling
+Hanan		Lutfiyya
+John		Barron
+Mark		Daley
+Nazim		Madhavji
+Sylvia		Osborn
+Tommy		Tran
+--------------
+select p.First_Name, p.Last_Name from Professor as p where p.Prof_User_Id not in (select Head_Supervisor_Id from TA) and p.Prof_User_Id not in (select Cosupervisor_Id from Cosupervisor)
+--------------
+
+First_Name	Last_Name
+Charles		Ling
+Hanan		Lutfiyya
+John		Barron
+Nazim		Madhavji
+Tommy		Tran
+--------------
+select Degree, count(*) as Num_TA from TA where Degree = "PhD"
+--------------
+
+Degree	Num_TA
+PhD	5
+--------------
+select c.Course_Num, c.Course_Name, t.First_Name, t.Last_Name from Course as c left outer join Assigned_Course as a on c.Course_Num = a.Course_Num left outer join TA as t on a.TA_User_Id = t.TA_User_Id where c.Course_Num like "CS1%"
+--------------
+
+Course_Num	Course_Name			First_Name	Last_Name
+CS1026		Intro to Programming		Lisa		Simpson
+CS1026		Intro to Programming		Monty		Burns
+CS1026		Intro to Programming		Maggie		Simpson
+CS1026		Intro to Programming		Marge		Simpson
+CS1032		Info Systems and Design		NULL		NULL
+CS1033		Multimedia and Communications	Homer		Simpson
+CS1033		Multimedia and Communications	Lisa		Simpson
+CS1033		Multimedia and Communications	Marge		Simpson
+CS1033		Multimedia and Communications	Ned		Flanders
+CS1033		Multimedia and Communications	Rod		Flanders
+--------------
+select Year, count(*) as Num_TAs from Assigned_Course group by Year
+--------------
+
+Year	Num_TAs
+2012	2
+2013	6
+2014	6
+--------------
+select Year from Assigned_Course group by Year having count(Year) < 5
+--------------
+
+Year
+2012
+--------------
+select t.First_Name, t.Last_Name from TA as t inner join Professor as p on t.Head_Supervisor_Id = p.Prof_User_Id inner join Cosupervisor on Cosupervisor.Cosupervisor_Id = t.Head_Supervisor_Id where p.First_Name = "Doug" and p.Last_Name = "Vancise"
+--------------
+
+First_Name	Last_Name
+Monty		Burns

@@ -1,0 +1,79 @@
+--------------
+show databases
+--------------
+
+Database
+information_schema
+mysql
+performance_schema
+testing
+vetoffice
+worksheet5
+--------------
+drop database if exists ttran244tadb
+--------------
+
+--------------
+create database ttran244tadb
+--------------
+
+--------------
+show tables
+--------------
+
+--------------
+create table Professor(First_Name varchar(30) not null, 
+Last_Name varchar(30) not null, 
+Prof_User_Id varchar(8) not null, 
+unique(Prof_User_Id), 
+primary key(Prof_User_Id))
+--------------
+
+--------------
+create table TA(First_Name varchar(30) not null, 
+Last_Name varchar(30) not null, 
+StudentNum char(9) not null,
+TA_User_Id varchar(8) not null, 
+Degree varchar(7) not null,
+Head_Supervisor_Id varchar(8),
+Image varchar(200), 
+unique(TA_User_Id, StudentNum), 
+primary key(TA_User_Id), 
+foreign key(Head_Supervisor_Id) references Professor(Prof_User_Id) on delete restrict)
+--------------
+
+--------------
+create table Course(Course_Num varchar(6) not null, 
+Course_Name varchar(30), 
+unique(Course_Num), 
+primary key(Course_Num))
+--------------
+
+--------------
+create table Cosupervisor(Cosupervisor_Id varchar(8), 
+TA_User_Id varchar(8), 
+foreign key(Cosupervisor_Id) references Professor(Prof_User_Id), 
+foreign key(TA_User_Id) references TA(TA_User_Id))
+--------------
+
+--------------
+create table Assigned_Course(TA_User_Id varchar(8), 
+Course_Num varchar(6),
+Term varchar(6),
+Year int,
+Num_Students int, 
+foreign key(TA_User_Id) references TA(TA_User_Id), 
+foreign key(Course_Num) references Course(Course_Num), 
+primary key(TA_User_Id, Course_Num))
+--------------
+
+--------------
+show tables
+--------------
+
+Tables_in_ttran244tadb
+Assigned_Course
+Cosupervisor
+Course
+Professor
+TA
