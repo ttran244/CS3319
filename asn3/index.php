@@ -18,12 +18,10 @@
 <title>TA Database</title>
 </head>
 <body bgcolor = "#4C0B5F">
-<?php
-include "connectdb.php";
-?>
 <h1><font color = "white">Welcome to the TA Database</font></h1>
 <h2><font color = "white">Select your user type to use the Database:</font></h2>
-<a href = ""><font color = "white">Grad Secretary (Requires password)<br></font></a>
+<a href = "password.php">
+<font color = "white">Grad Secretary (Requires password)<br></font></a>
 <a href = ""><font color = "white">Professor</font></a>
 </body>
 </html>
