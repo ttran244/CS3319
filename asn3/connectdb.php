@@ -1,3 +1,4 @@
+<?php
 /*
  * connectdb.php
  * 
@@ -8,7 +9,7 @@
  *
  * Connects the database to the php web page
  */
-<?php
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
