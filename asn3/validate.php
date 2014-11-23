@@ -13,7 +13,7 @@
  
 $pass = "janice";
 if ($pass == $_POST["pass"]) {
-  include "secFunctions";
+  include "secFunctions.php";
 }
 else {
 ?>
