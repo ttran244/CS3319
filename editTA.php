@@ -27,6 +27,7 @@ $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $degree = $_POST["degree"];
 $headProf = $_POST["prof"];
+$coProf = $_POST["prof2"];
 $query = 'update TA set ';
 if ($firstname != NULL) {
   $query = $query.'firstname = "'.$firstname.'"';
@@ -55,13 +56,28 @@ if (($firstname != NULL || $lastname != NULL || $degree != NULL || $taPic != NUL
 else if ($headProf != NULL) {
   $query = $query.'Prof_userid = "'.$headProf.'"';
 }
-$query = $query.' where studentnumber = "'.$ta.'"';
-$result = mysqli_query($connection, $query);
-if (!$result) {
-  die("Error: update failed ".mysqli_error($connection));
+if ($coProf != NULL) {
+  $query2 = 'select * from TA where studentnumber = "'.$ta.'"';
+  $result2 = mysqli_query($connection, $query2);
+    if (!$result2) {
+      die("Error: add CoSupervisor failed. ".mysqli_error($connection));
+    }
+    $row2 = mysqli_fetch_assoc($result2);
+    $query3 = 'insert into CoSupervise values("'.$coProf.'","'.$row2["userid"].'")';
+    echo "CoSupervisor added";
+    if(!mysqli_query($connection, $query3)) {
+      die("Error: insert CoSupervisor failed. ".mysqli_error($connection));
+    }
 }
-echo "Update complete!";
-mysqli_close($connection);
+if ($firstname != NULL || $lastname != NULL || $degree != NULL || $headProf != NULL) {
+  $query = $query.' where studentnumber = "'.$ta.'"';
+  $result = mysqli_query($connection, $query);
+  if (!$result) {
+    die("Error: update failed ".mysqli_error($connection));
+  }
+  echo "Update complete!";
+  mysqli_close($connection);
+}
 ?>
 <br><br>
 <a href = "secFunctions.php"><font color = "white">Go Back to TA List </font></a>
