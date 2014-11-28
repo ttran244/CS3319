@@ -19,10 +19,12 @@ include "connectdb.php";
 </head>
 <body bgcolor = "#4C0B5F">
 <font color = "white">
+<h1><font color = "white">Choose a TA to edit</font></h1>
 <form action = "getTAData.php" method = "post">
 <?php
   include "getTA.php";
 ?>
+<br>
 <input type = "submit" value = "Edit TA">
 </form>
 <h1><font color = "white">Add new TA</font></h1>
@@ -59,6 +61,15 @@ User Id: <input type ="text" name = "uid">
 <br><br>
 <input type = "submit" value = "Add New Professor">
 </form>
+<h1><font color = "white">Choose a Course to edit</font></h1>
+<form action = "getCourseData.php" method = "post">
+<?php
+  include "getCourse.php";
+?>
+<br>
+<input type = "submit" value = "Edit Course">
+</form>
+
 <?php
 mysqli_close($connection);
 ?>
