@@ -24,4 +24,9 @@ include "upload_file.php";
 include "connectdb.php";
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
-$
+$stuNum = $_POST["snum"];
+$userId = $_POST["uid"];
+$degree = $_POST["degree"];
+$headProf = $_POST["prof"];
+
+
