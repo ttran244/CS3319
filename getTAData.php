@@ -43,13 +43,13 @@ echo "Student Number: ".$row["studentnumber"]."<br>";
 echo "User ID: ".$row["userid"]."<br>";
 echo "Degree Type: ".$row["gradtype"]."<br>";
 echo "Image Location: ".$row["imagelocation"]."<br>";
-echo "Head Supervisor: ".$row2["firstname"]." ".$row2["lastname"]." "."(".$row["Prof_userid"].")</br>";
+echo "Head Supervisor: ".$row2["firstname"]." ".$row2["lastname"]." "."(".$row["Prof_userid"].")<br>";
 if (empty($row3)) {
-  echo "CoSupervisor: None</br>";
+  echo "CoSupervisor: None<br>";
 }
 else {
   while($row3 = mysqli_fetch_assoc($result3)) {
-    echo "CoSupervisor: ".$row3["firstname"]." ".$row3["lastname"]." "."(".$row3["userid"].")</br>";
+    echo "CoSupervisor: ".$row3["firstname"]." ".$row3["lastname"]." "."(".$row3["userid"].")<br>";
 }
 echo "<br>";
 mysqli_free_result($result3);
@@ -63,8 +63,13 @@ mysqli_free_result($result2);
 <form action = "editTA.php" method = "post" enctype = "multipart/form-data">
 First Name: <input type = "text" name = "fname">
 Last Name: <input type = "text" name = "lname">
-Degree: <input type = "text" name = "degree">
-Image Location: <input type = "file" name = "file" id = "file">
+Degree: <input type = "radio" name = "degree" value = "Masters">Masters
+<input type = "radio" name = "degree" value = "PhD">PhD      
+<br><br>Image: <input type = "file" name = "file" id = "file">
+<br><br>Head Supervisor: <br> 
+<?php 
+include "getProf.php";
+?> 
 <input type = "hidden", name= "ta" value = "<?php echo $ta;?>">
 <br><br>
 <input type = "submit" value = "Make Edits">

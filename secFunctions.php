@@ -11,6 +11,14 @@
 
 include "connectdb.php";
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Grad Secretary Functions - TA Database</title>
+</head>
+<body bgcolor = "#4C0B5F">
+<font color = "white">
 <form action = "getTAData.php" method = "post">
 <?php
   include "getTA.php";
@@ -20,3 +28,6 @@ include "connectdb.php";
 <?php
 mysqli_close($connection);
 ?>
+</font>
+</body>
+</html>

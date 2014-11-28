@@ -11,21 +11,7 @@
  
 $pass = "janice";
 if ($pass == $_POST["pass"]) {
-?>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Grad Secretary Functions - TA Database</title>
-</head>
-<body bgcolor = "#4C0B5F">
-<font color = "white">
-<?php 
   include "secFunctions.php";
-?>
-</font>
-</body>
-</html>
-<?php
 }
 else {
 ?>

@@ -26,6 +26,7 @@ $ta = $_POST["ta"];
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $degree = $_POST["degree"];
+$headProf = $_POST["prof"];
 $query = 'update TA set ';
 if ($firstname != NULL) {
   $query = $query.'firstname = "'.$firstname.'"';
@@ -47,6 +48,12 @@ if (($firstname != NULL || $lastname != NULL || $degree != NULL) && ($taPic != N
 }
 else if ($taPic != NULL) {
   $query = $query.'imagelocation = "'.$taPic.'"';
+}
+if (($firstname != NULL || $lastname != NULL || $degree != NULL || $taPic != NULL) && ($headProf != NULL)) {
+  $query = $query.',Prof_userid = "'.$headProf.'"';
+}
+else if ($headProf != NULL) {
+  $query = $query.'Prof_userid = "'.$headProf.'"';
 }
 $query = $query.' where studentnumber = "'.$ta.'"';
 $result = mysqli_query($connection, $query);
