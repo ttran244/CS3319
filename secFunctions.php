@@ -25,6 +25,25 @@ include "connectdb.php";
 ?>
 <input type = "submit" value = "Edit TA">
 </form>
+<h1><font color = "white">Add new TA</font></h1>
+<form action = addTA.php" method = "post" enctype = "multipart/form-data">
+First Name: <input type = "text" name = "fname">
+Last Name: <input type = "text" name = "lname">
+Student Number: <input type = "text" name = "snum">
+User Id: <input type = "text" name = "uid">
+Degree: <input type = "radio" name = "degree" value = "Masters">Masters
+<input type = "radio" name = "degree" value = "PhD">PhD
+<br><br>
+Image: <input type = "file" name = "file" id = "file">
+<br><br>
+Head Supervisor: <br>
+<?php
+include "getProf.php";
+?>
+<input type = "submit" value = "Add New TA">
+</form>
+
+
 <?php
 mysqli_close($connection);
 ?>

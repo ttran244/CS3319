@@ -90,6 +90,8 @@ include "deleteCo.php";
 <?php
 mysqli_close($connection);
 ?>
+<br><br>
+<a href = "secFunctions.php"><font color = "white">Go Back To Secretary Functions</font></a>
 </font>
 </body>
 </html>
