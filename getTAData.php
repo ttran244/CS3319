@@ -64,7 +64,8 @@ mysqli_free_result($result2);
 First Name: <input type = "text" name = "fname">
 Last Name: <input type = "text" name = "lname">
 Degree: <input type = "text" name = "degree">
-Image Location: <input type = "file" name = id = "file">
+Image Location: <input type = "file" name = "file" id = "file">
+<input type = "hidden", name= "ta" value = "<?php echo $ta;?>">
 <br><br>
 <input type = "submit" value = "Make Edits">
 </form>

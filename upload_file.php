@@ -37,6 +37,6 @@ if ((fnmatch("P[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].jpg", $_FILES["file
   }
 }
   else {
-    echo "Invalid file";
+    echo "Invalid/No image file</br>";
   }
 ?>  
