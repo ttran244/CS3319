@@ -69,7 +69,13 @@ User Id: <input type ="text" name = "uid">
 <br>
 <input type = "submit" value = "Edit Course">
 </form>
-
+<h1><font color = "white">Add new Course</font></h1>
+<form action = "addCourse.php" method = "post">
+Course Code: <input type = "text" name = "code">
+Course Name: <input type = "text" name = "cname">
+<br><br>
+<input type = "submit" value = "Add New Course">
+</form>
 <?php
 mysqli_close($connection);
 ?>

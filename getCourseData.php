@@ -33,7 +33,8 @@ $row = mysqli_fetch_assoc($result);
 echo "Course Code: ".$row["coursenumber"]."<br>";
 echo "Course Name: ".$row["coursename"]."<br>";
 echo "Assigned TA(s): <br>";
-$query2 = 'select * from TAAssignedTo where coursenumber = "'.$code.'"';
+mysqli_free_result($result);
+$query2 = 'select * from TAAssignedTo where coursenumber = "'.$code.'" order by year desc';
 $result2 = mysqli_query($connection, $query2);
 if(!$result2) {
   die("Database query failed.");
@@ -52,8 +53,8 @@ else {
     $row3 = mysqli_fetch_assoc($result3);
     echo '<img src = "'.$row3["imagelocation"].'"height = "150" width = "120">';
     echo "<br><br>";
-    echo $row3["firstname"]." ".$row3["lastname"].", ".$row2["term"]." ".$row2["year"].", ".$row2["numberstudents"];
-    echo "<br>";
+    echo $row3["firstname"]." ".$row3["lastname"].", ".$row2["term"]." ".$row2["year"].", Number of Students: ".$row2["numberstudents"];
+    echo "<br><br><br><br>";
   }
   while ($row2 = mysqli_fetch_assoc($result2)) {
     $id = $row2["TA_userid"];
@@ -66,8 +67,25 @@ else {
       $row3 = mysqli_fetch_assoc($result3);
       echo '<img src = "'.$row3["imagelocation"].'"height = "150" width = "120">';
       echo "<br><br>";
-      echo $row3["firstname"]." ".$row3["lastname"].", ".$row2["term"]." ".$row2["year"].", ".$row2["numberstudents"];
-      echo "<br>";
+      echo $row3["firstname"]." ".$row3["lastname"].", ".$row2["term"]." ".$row2["year"].", Number of Students: ".$row2["numberstudents"];
+      echo "<br><br><br><br>";
     }
   }
-}  
+mysqli_free_result($result2);
+mysqli_free_result($result3);
+}
+?>
+<h1><font color = "white">Delete TA</font></h1>
+<form action = "deleteCourse.php" method = "post">    
+<input type = "hidden" name = "code" value = "<?php echo $code;?>"> 
+<input type = "submit" value = "Delete Course">
+</form>
+
+<?php
+mysqli_close($connection);
+?>
+<br><br>
+<a href = "secFunctions.php"><font color = "white">Go Back to Secretary Functions</font></a>
+</font>
+</body>
+</html> 
