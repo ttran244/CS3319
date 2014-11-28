@@ -15,7 +15,7 @@ $result = mysqli_query($connection, $query);
 if (!$result) {
   die("Database query failed.");
 }
-echo "Choose a TA to edit </br></br>";
+echo '<h1><font color = "white">Choose a TA to edit</font></h1>';
 while ($row = mysqli_fetch_assoc($result)) {
   echo '<input type = "radio" name = "ta" value = "';
   echo $row["studentnumber"];

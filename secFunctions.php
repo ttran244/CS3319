@@ -26,7 +26,7 @@ include "connectdb.php";
 <input type = "submit" value = "Edit TA">
 </form>
 <h1><font color = "white">Add new TA</font></h1>
-<form action = addTA.php" method = "post" enctype = "multipart/form-data">
+<form action = "addTA.php" method = "post" enctype = "multipart/form-data">
 First Name: <input type = "text" name = "fname">
 Last Name: <input type = "text" name = "lname">
 Student Number: <input type = "text" name = "snum">
@@ -40,6 +40,7 @@ Head Supervisor: <br>
 <?php
 include "getProf.php";
 ?>
+<br>
 <input type = "submit" value = "Add New TA">
 </form>
 

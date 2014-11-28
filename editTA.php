@@ -97,7 +97,7 @@ if ($firstname != NULL || $lastname != NULL || $degree != NULL || $headProf != N
 }
 ?>
 <br><br>
-<a href = "secFunctions.php"><font color = "white">Go Back to TA List </font></a>
+<a href = "secFunctions.php"><font color = "white">Go Back to Secretary Functions </font></a>
 </font>
 </body>
 </html> 
