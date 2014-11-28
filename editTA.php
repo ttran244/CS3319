@@ -27,7 +27,8 @@ $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $degree = $_POST["degree"];
 $headProf = $_POST["prof"];
-$coProf = $_POST["prof2"];
+$addCoProf = $_POST["prof2"];
+$delCoProf = $_POST["prof3"];
 $query = 'update TA set ';
 if ($firstname != NULL) {
   $query = $query.'firstname = "'.$firstname.'"';
@@ -56,19 +57,35 @@ if (($firstname != NULL || $lastname != NULL || $degree != NULL || $taPic != NUL
 else if ($headProf != NULL) {
   $query = $query.'Prof_userid = "'.$headProf.'"';
 }
-if ($coProf != NULL) {
+if ($addCoProf != NULL) {
   $query2 = 'select * from TA where studentnumber = "'.$ta.'"';
   $result2 = mysqli_query($connection, $query2);
     if (!$result2) {
       die("Error: add CoSupervisor failed. ".mysqli_error($connection));
     }
     $row2 = mysqli_fetch_assoc($result2);
-    $query3 = 'insert into CoSupervise values("'.$coProf.'","'.$row2["userid"].'")';
-    echo "CoSupervisor added";
+    $query3 = 'insert into CoSupervise values("'.$addCoProf.'","'.$row2["userid"].'")';
     if(!mysqli_query($connection, $query3)) {
       die("Error: insert CoSupervisor failed. ".mysqli_error($connection));
     }
+    echo "CoSupervisor added";
+    mysqli_free_result($result2);
 }
+if ($delCoProf != NULL) {
+  $query2 = 'select * from TA where studentnumber = "'.$ta.'"';
+  $result2 = mysqli_query($connection, $query2);
+    if (!$result2) {
+      die("Error: delete CoSupervisor failed. ".mysqli_error($connection));
+    }
+    $row2 = mysqli_fetch_assoc($result2);
+    $query3 = 'delete from CoSupervise where Prof_userid = "'.$delCoProf.'" and TA_userid = "'.$row2["userid"].'"';
+    if(!mysqli_query($connection, $query3)) {
+      die("Error: insert CoSupervisor failed. ".mysqli_error($connection));
+    }
+    echo "CoSupervisor deleted";
+    mysqli_free_result($result2);
+}
+
 if ($firstname != NULL || $lastname != NULL || $degree != NULL || $headProf != NULL) {
   $query = $query.' where studentnumber = "'.$ta.'"';
   $result = mysqli_query($connection, $query);

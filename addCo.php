@@ -1,6 +1,6 @@
 <?php
 /*
- * getProf2.php
+ * addCo.php
  * 
  * Computer Science 3319a
  * Assignment 3
@@ -8,7 +8,7 @@
  * Author: Tommy Tran (ttran244@uwo.ca)
  *
  * Query that gets all the Professors in the database and lists them. 
- * To be used to edit CoSupervisor 
+ * To be used to add CoSupervisor 
  */
 
 $query = "select * from Professor";
