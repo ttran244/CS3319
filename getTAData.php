@@ -88,9 +88,10 @@ include "deleteCo.php";
 <input type = "submit" value = "Make Edits">
 </form>
 <h3><font color = "white">Delete TA</font></h3>
-<form action "deleteTA.php" method = "post">
-<input type = "hidden", name = "ta" value = "<?php echo $ta;?>"> 
-<input type = "button" value = "Delete TA" onclick = "return confirm('Are you sure?');">
+<form action = "deleteTA.php" method = "post">    
+<input type = "hidden" name = "ta" value = "<?php echo $ta;?>"> 
+<input type = "submit" value = "Delete TA">
+</form>
 <?php
 mysqli_close($connection);
 ?>
