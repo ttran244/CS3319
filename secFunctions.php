@@ -44,7 +44,7 @@ include "getProf.php";
 <input type = "submit" value = "Add New TA">
 </form>
 <h2><font color = "white">Choose a Professor to edit</font></h2>
-<form action = getProfData.php" method = "post">
+<form action = "getProfData.php" method = "post">
 <?php
   include "getProf.php";
 ?>

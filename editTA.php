@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Edit Complete - TA Database</title>
+<title>TA Edit Complete - TA Database</title>
 </head>
 <body bgcolor = "#4C0B5F">
 <font color = "white">

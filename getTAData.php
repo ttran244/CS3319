@@ -18,7 +18,7 @@
 <meta charset="utf-8">
 <title>Edit TA - TA Database</title>
 </head>
-<body bgcolor = "#4CoB5F">
+<body bgcolor = "#4C0B5F">
 <font color = "white">
 <h1>TA Information</h1>
 <?php
