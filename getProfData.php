@@ -36,7 +36,7 @@ echo "User ID: ".$row["userid"]."<br>";
 echo "<br>";
 mysqli_free_result($result);
 ?>
-<h2>Enter new information to make changes to the specified field(s)</h2>
+<h1>Enter new information to make changes to the specified field(s)</h1>
 <br>
 <form action = "editProf.php" method = "post">
 First Name: <input type = "text" name = "fname">
@@ -45,3 +45,16 @@ Last Name: <input type = "text" name = "lname">
 <br><br>
 <input type = "submit" value = "Make Edits">
 </form>
+<h1><font color = "white">Delete Professor</font></h1>
+<form action = "deleteProf.php" method = "post">
+<input type = :hidden" name = "prof" value = "<?php echo $prof;?>">
+<input type = "submit" value = "Delete Professor">
+</form>
+<?php
+mysqli_close($connection);
+?>
+<br><br>
+<a href = "secFunctions.php"><font color = "white">Go Back to Secretary Functions</font></a>
+</font>
+</body>
+</html>

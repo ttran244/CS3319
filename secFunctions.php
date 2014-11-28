@@ -43,14 +43,21 @@ include "getProf.php";
 <br>
 <input type = "submit" value = "Add New TA">
 </form>
-<h2><font color = "white">Choose a Professor to edit</font></h2>
+<h1><font color = "white">Choose a Professor to edit</font></h1>
 <form action = "getProfData.php" method = "post">
 <?php
   include "getProf.php";
 ?>
 <br>
 <input type = "submit" value = "Edit Professor">
-
+</form>
+<h1><font color = "white">Add new Professor</font></h1>
+<form action = "addProf.php" method = "post">
+First Name: <input type = "text" name = "fname">
+Last Name: <input type = "text" name = "lname">
+User Id: <input type ="text" name = "uid">
+<br><br>
+<input type = "submit" value = "Add New Professor">
 </form>
 <?php
 mysqli_close($connection);
