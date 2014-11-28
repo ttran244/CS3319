@@ -47,7 +47,7 @@ Last Name: <input type = "text" name = "lname">
 </form>
 <h1><font color = "white">Delete Professor</font></h1>
 <form action = "deleteProf.php" method = "post">
-<input type = :hidden" name = "prof" value = "<?php echo $prof;?>">
+<input type = "hidden" name = "prof" value = "<?php echo $prof;?>">
 <input type = "submit" value = "Delete Professor">
 </form>
 <?php

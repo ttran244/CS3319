@@ -22,9 +22,15 @@
 <?php
 include "connectdb.php";
 $ta = $_POST["ta"];
-$query = 'delete from TA where studentnumber = "'.$ta.'"';
+$query = 'select * from TA where studentnumber = "'.$ta.'"';
 $result = mysqli_query($connection, $query);
-if (!$result) {
+$row = mysqli_fetch_assoc($result);
+$query2 = 'delete from CoSupervise where TA_userid = "'.$row["userid"].'"';
+mysqli_query($connection, $query2);
+mysqli_free_result($result);
+$query3 = 'delete from TA where studentnumber = "'.$ta.'"';
+$result3 = mysqli_query($connection, $query3);
+if (!$result3) {
   die("Error: delete TA failed ".mysqli_error($connection));
 }
 echo "TA deleted";
