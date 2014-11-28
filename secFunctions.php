@@ -43,8 +43,15 @@ include "getProf.php";
 <br>
 <input type = "submit" value = "Add New TA">
 </form>
+<h2><font color = "white">Choose a Professor to edit</font></h2>
+<form action = getProfData.php" method = "post">
+<?php
+  include "getProf.php";
+?>
+<br>
+<input type = "submit" value = "Edit Professor">
 
-
+</form>
 <?php
 mysqli_close($connection);
 ?>
