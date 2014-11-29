@@ -11,6 +11,7 @@
 
 include "connectdb.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@ include "connectdb.php";
 </head>
 <body bgcolor = "#4C0B5F">
 <font color = "white">
-<h1><font color = "white">Choose a TA to edit</font></h1>
+<h1>Choose a TA to edit</h1>
 <form action = "getTAData.php" method = "post">
 <?php
   include "getTA.php";
@@ -27,7 +28,7 @@ include "connectdb.php";
 <br>
 <input type = "submit" value = "Edit TA">
 </form>
-<h1><font color = "white">Add new TA</font></h1>
+<h1>Add new TA</h1>
 <form action = "addTA.php" method = "post" enctype = "multipart/form-data">
 First Name: <input type = "text" name = "fname">
 Last Name: <input type = "text" name = "lname">
@@ -45,7 +46,7 @@ include "getProf.php";
 <br>
 <input type = "submit" value = "Add New TA">
 </form>
-<h1><font color = "white">Choose a Professor to edit</font></h1>
+<h1>Choose a Professor to edit</h1>
 <form action = "getProfData.php" method = "post">
 <?php
   include "getProf.php";
@@ -53,7 +54,7 @@ include "getProf.php";
 <br>
 <input type = "submit" value = "Edit Professor">
 </form>
-<h1><font color = "white">Add new Professor</font></h1>
+<h1>Add new Professor</h1>
 <form action = "addProf.php" method = "post">
 First Name: <input type = "text" name = "fname">
 Last Name: <input type = "text" name = "lname">
@@ -61,7 +62,7 @@ User Id: <input type ="text" name = "uid">
 <br><br>
 <input type = "submit" value = "Add New Professor">
 </form>
-<h1><font color = "white">Choose a Course to edit</font></h1>
+<h1>Choose a Course to edit</h1>
 <form action = "getCourseData.php" method = "post">
 <?php
   include "getCourse.php";
@@ -69,7 +70,7 @@ User Id: <input type ="text" name = "uid">
 <br>
 <input type = "submit" value = "Edit Course">
 </form>
-<h1><font color = "white">Add new Course</font></h1>
+<h1>Add new Course</h1>
 <form action = "addCourse.php" method = "post">
 Course Code: <input type = "text" name = "code">
 Course Name: <input type = "text" name = "cname">

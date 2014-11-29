@@ -10,8 +10,10 @@
  * Based on user selected Professor, get a list of TA(s) assigned 
  * to that selected Professor
  */
+
 include "connectdb.php"
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

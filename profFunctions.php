@@ -9,8 +9,10 @@
  *
  * Professor functions to be performed on the TA Database
  */
+
 include "connectdb.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -9,6 +9,8 @@
  *
  * Deletes a Professor from the database
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,6 @@
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "connectdb.php";
 $prof = $_POST["prof"];
 $query = 'select * from TA where Prof_userid = "'.$prof.'"';
 $result = mysqli_query($connection, $query);

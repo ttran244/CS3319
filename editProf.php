@@ -9,6 +9,8 @@
  *
  * Update the Professor table in the database based on the user's input
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,6 @@
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "connectdb.php";
 $prof = $_POST["prof"];
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];

@@ -9,19 +9,20 @@
  *
  * Adds a new TA into the database
  */
+
+include "upload_file.php";
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Add Complete - TA Database</title>
+<title>Add TA Complete - TA Database</title>
 </head>
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "upload_file.php";
-include "connectdb.php";
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $stuNum = $_POST["snum"];
@@ -37,7 +38,7 @@ if (fnmatch("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]", $stuNum)) {
         die("Error: insert TA failed. ".mysqli_error($connection));
       }
       else {
-        echo "TA added";
+        echo "TA added!";
       }
     }
     else {

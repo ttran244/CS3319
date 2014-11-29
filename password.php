@@ -18,10 +18,12 @@
 <title>Login - TA Database</title>
 </head>
 <body bgcolor = "#4C0B5F">
-<h1><font color = "white">Please enter the password to login</font></h1>
+<font color = "white">
+<h1>Please enter the password to login</h1>
 <form action = "validate.php" method = "post">
-<font color = "white">Password: <input type = "password" name = "pass"> </font>
+Password: <input type = "password" name = "pass"> 
 <input type = "submit" value = "Submit">
 </form>
+</font>
 </body>
 </html>

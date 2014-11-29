@@ -9,31 +9,34 @@
  *
  * Deletes a TA from the database
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Delete Complete - TA Database</title>
+<title>Delete TA Complete - TA Database</title>
 </head>
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "connectdb.php";
 $ta = $_POST["ta"];
 $query = 'select * from TA where studentnumber = "'.$ta.'"';
 $result = mysqli_query($connection, $query);
 $row = mysqli_fetch_assoc($result);
 $query2 = 'delete from CoSupervise where TA_userid = "'.$row["userid"].'"';
 mysqli_query($connection, $query2);
+$query3 = 'delete from TAAssignedTo where TA_userid = "'.$row["userid"].'"';
+mysqli_query($connection, $query3);
 mysqli_free_result($result);
-$query3 = 'delete from TA where studentnumber = "'.$ta.'"';
-$result3 = mysqli_query($connection, $query3);
-if (!$result3) {
+$query4 = 'delete from TA where studentnumber = "'.$ta.'"';
+$result4 = mysqli_query($connection, $query4);
+if (!$result4) {
   die("Error: delete TA failed ".mysqli_error($connection));
 }
-echo "TA deleted";
+echo "TA deleted!";
 mysqli_close($connection);
 ?>
 <br><br><br><br>
@@ -41,7 +44,5 @@ mysqli_close($connection);
 </font>
 </body>
 </html>
-
-
 
 

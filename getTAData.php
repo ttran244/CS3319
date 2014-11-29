@@ -10,6 +10,8 @@
  * Query to the database that gets the information of the 
  * specified TA. 
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html> 
@@ -22,7 +24,6 @@
 <font color = "white">
 <h1>TA Information</h1>
 <?php
-include "connectdb.php";
 $ta = $_POST["ta"];
 $query = 'select * from TA where studentnumber = "'.$ta.'"';
 $query2 = 'select Professor.firstname, Professor.lastname from Professor, TA where Professor.userid = TA.Prof_userid and TA.studentnumber = "'.$ta.'"';
@@ -59,7 +60,7 @@ mysqli_free_result($result3);
 mysqli_free_result($result);
 mysqli_free_result($result2);
 ?>
-<h2>Enter new information to make changes to the specified field(s)</h2>
+<h1>Enter new information to make changes to the specified field(s)</h1>
 <br>
 <form action = "editTA.php" method = "post" enctype = "multipart/form-data">
 First Name: <input type = "text" name = "fname">
@@ -87,7 +88,7 @@ include "deleteCo.php";
 <br><br>
 <input type = "submit" value = "Make Edits">
 </form>
-<h3><font color = "white">Delete TA</font></h3>
+<h1>Delete TA</h1>
 <form action = "deleteTA.php" method = "post">    
 <input type = "hidden" name = "ta" value = "<?php echo $ta;?>"> 
 <input type = "submit" value = "Delete TA">
@@ -96,7 +97,7 @@ include "deleteCo.php";
 mysqli_close($connection);
 ?>
 <br><br>
-<a href = "secFunctions.php"><font color = "white">Go Back To Secretary Functions</font></a>
+<a href = "secFunctions.php"><font color = "white">Go Back to Secretary Functions</font></a>
 </font>
 </body>
 </html>

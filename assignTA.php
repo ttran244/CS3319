@@ -5,10 +5,12 @@
  * Computer Science 3319a
  * Assignment 3
  *
- * Author: Tommy Tran (ttrn244@uwo.ca)
+ * Author: Tommy Tran (ttran244@uwo.ca)
  *
  * Assign a TA to a Course in the database
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,6 @@
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "connectdb.php";
 $code = $_POST["code"];
 $ta = $_POST["ta"];
 $year = $_POST["year"];

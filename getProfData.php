@@ -10,6 +10,8 @@
  * Query to the database that gets the information of the 
  * specified Professor
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,6 @@
 <font color = "white">
 <h1> Professor Information</h1>
 <?php
-include "connectdb.php";
 $prof = $_POST["prof"];
 $query = 'select * from Professor where userid = "'.$prof.'"';
 $result = mysqli_query($connection, $query);
@@ -45,7 +46,7 @@ Last Name: <input type = "text" name = "lname">
 <br><br>
 <input type = "submit" value = "Make Edits">
 </form>
-<h1><font color = "white">Delete Professor</font></h1>
+<h1>Delete Professor</h1>
 <form action = "deleteProf.php" method = "post">
 <input type = "hidden" name = "prof" value = "<?php echo $prof;?>">
 <input type = "submit" value = "Delete Professor">

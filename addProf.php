@@ -5,10 +5,12 @@
  * Computer Science 3319a
  * Assignment 3
  *
- * Author: Tommy Tran (ttran224@uwo.ca)
+ * Author: Tommy Tran (ttran244@uwo.ca)
  *
  * Adds a new Professor into the database
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,6 @@
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "connectdb.php";
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $userId = $_POST["uid"];
@@ -44,7 +45,4 @@ mysqli_close($connection);
 </font>
 </body>
 </html>
-
-
-
 

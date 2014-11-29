@@ -10,6 +10,8 @@
  * Query to the database that gets the information of the 
  * specified course.
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,6 @@
 <font color = "white">
 <h1>Course Information</h1>
 <?php
-include "connectdb.php";
 $code = $_POST["code"];
 $query = 'select * from Course where coursenumber = "'.$code.'"';
 $result = mysqli_query($connection, $query);
@@ -75,12 +76,12 @@ mysqli_free_result($result2);
 mysqli_free_result($result3);
 }
 ?>
-<h1><font color = "white">Delete Course</font></h1>
+<h1>Delete Course</h1>
 <form action = "deleteCourse.php" method = "post">    
 <input type = "hidden" name = "code" value = "<?php echo $code;?>"> 
 <input type = "submit" value = "Delete Course">
 </form>
-<h1><font color = "white">Add TA to Course</font></h1>
+<h1>Add TA to Course</h1>
 <form action = "assignTA.php" method = "post">
 Term: <input type = "radio" name = "term" value = "Spring">Spring
 <input type = "radio" name = "term" value = "Summer">Summer

@@ -9,6 +9,9 @@
  *
  * Update the TA table in the database based on the user's input
  */
+
+include "upload_file.php";
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +23,6 @@
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-include "upload_file.php";
-include "connectdb.php";
 $ta = $_POST["ta"];
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
@@ -68,7 +69,7 @@ if ($addCoProf != NULL) {
     if(!mysqli_query($connection, $query3)) {
       die("Error: insert CoSupervisor failed. ".mysqli_error($connection));
     }
-    echo "CoSupervisor added";
+    echo "CoSupervisor added!";
     mysqli_free_result($result2);
 }
 if ($delCoProf != NULL) {
@@ -82,7 +83,7 @@ if ($delCoProf != NULL) {
     if(!mysqli_query($connection, $query3)) {
       die("Error: insert CoSupervisor failed. ".mysqli_error($connection));
     }
-    echo "CoSupervisor deleted";
+    echo "CoSupervisor deleted!";
     mysqli_free_result($result2);
 }
 

@@ -10,6 +10,8 @@
  * Query to the database that gets the information of the TA assigned to the
  * specified course.
  */
+
+include "connectdb.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,6 @@
 <font color = "white">
 <h1>TAs assigned to the Course</h1>
 <?php
-include "connectdb.php";
 $code = $_POST["code"];
 $term = $_POST["term"];
 $year = $_POST["year"];
