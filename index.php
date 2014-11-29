@@ -22,7 +22,7 @@
 <h2><font color = "white">Select your user type to use the Database:</font></h2>
 <a href = "password.php">
 <font color = "white">Grad Secretary (Requires password)<br></font></a>
-<a href = ""><font color = "white">Professor</font></a>
+<a href = "profFunctions.php"><font color = "white">Professor</font></a>
 </body>
 </html>
 
