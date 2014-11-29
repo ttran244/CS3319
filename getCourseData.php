@@ -75,10 +75,27 @@ mysqli_free_result($result2);
 mysqli_free_result($result3);
 }
 ?>
-<h1><font color = "white">Delete TA</font></h1>
+<h1><font color = "white">Delete Course</font></h1>
 <form action = "deleteCourse.php" method = "post">    
 <input type = "hidden" name = "code" value = "<?php echo $code;?>"> 
 <input type = "submit" value = "Delete Course">
+</form>
+<h1><font color = "white">Add TA to Course</font></h1>
+<form action = "assignTA.php" method = "post">
+Term: <input type = "radio" name = "term" value = "Spring">Spring
+<input type = "radio" name = "term" value = "Summer">Summer
+<input type = "radio" name = "term" value = "Fall">Fall
+<br>
+Year: <input type = "text" name = "year">
+Number of Students: <input type = "text" name = "numstu">
+<br><br>
+Select a TA:<br>
+<?php
+include "getTA.php";
+?>
+<br>    
+<input type = "hidden" name = "code" value = "<?php echo $code;?>"> 
+<input type = "submit" value = "Assign TA to Course">
 </form>
 
 <?php
