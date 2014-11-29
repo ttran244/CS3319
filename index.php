@@ -18,7 +18,7 @@
 <meta charset="utf-8">
 <title>TA Database</title>
 </head>
-<body bgcolor = "#4C0B5F">A
+<body bgcolor = "#4C0B5F">
 <font color = "white">
 <h1>Welcome to the TA Database</h1>
 <h2>Select your user type to use the Database:</h2>
