@@ -43,7 +43,7 @@ Year: <input type = "text" name = "year">
 <input type = "submit" value = "Check Assigned TAs">
 </form>
 <h1>Select a TA to see how many courses they have been TAed</h1>
-<form action "numCourseTAed.php" method = "post">
+<form action = "numCourseTAed.php" method = "post">
 Choose a TA: <br><br>
 <?php
 include "getTA.php";
@@ -54,6 +54,8 @@ include "getTA.php";
 <?php
 mysqli_close($connection);
 ?>
+<br><br><br><br>
+<a href = "index.php"><font color = "white">Back to Home Page</font></a>
 </font>
 </body>
 </html>

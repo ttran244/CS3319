@@ -79,6 +79,8 @@ Course Name: <input type = "text" name = "cname">
 <?php
 mysqli_close($connection);
 ?>
+<br><br><br><br>
+<a href = "index.php"><font color = "white">Back to Home Page</font></a>
 </font>
 </body>
 </html>

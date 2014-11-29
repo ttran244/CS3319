@@ -22,17 +22,43 @@ include "connectdb.php";
 <body bgcolor = "#4C0B5F">
 <font color = "white">
 <?php
-$
+$ta = $_POST["ta"];
+$query = 'select * from TA where studentnumber = "'.$ta.'"';
+$result = mysqli_query($connection, $query);
+if (!$result) {
+  die("Database query failed.");
+}
+$row = mysqli_fetch_assoc($result);
+$query2 = 'select count(*) from TAAssignedTo where TA_userid = "'.$row["userid"].'"';
+$result2 = mysqli_query($connection, $query2);
+if (!$result) {
+  die("Database query failed.");
+}
+$row2 = mysqli_fetch_assoc($result2);
+if ($row["gradtype"] == "Masters") {
+  if ($row2["count(*)"] > 3) {
+    echo "Number of courses TAed: ".$row2["count(*)"]." (Number of courses TAed is over the limit)";
+  }
+  else {
+  echo "Number of courses TAed: ".$row2["count(*)"]." (Can still TA more)";
+  }
+}
+else {
+  if ($row2["count(*)"] > 8) {
+    echo "Number of courses TAed: ".$row2["count(*)"]." (Number of courses TAed is over the limit)";
+  }
+  else {
+    echo "Number of courses TAed: ".$row2["count(*)"]." (Can still TA more)";
+  }
+}
 
-?>
-
-<?php
-mysqli_close($connections);
+mysqli_free_result($result);
+mysqli_free_result($result2);
+mysqli_close($connection);
 ?>
 
 <br><br><br><br>
 <a href = "profFunctions.php"><font color = "white">Go Back to Professor Functions</font></a>
-
 </font>
 </body>
 </html>
