@@ -12,7 +12,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "viet48";
+$dbpass = "";
 $dbname = "ttran244tadb";
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (mysqli_connect_errno()) {
